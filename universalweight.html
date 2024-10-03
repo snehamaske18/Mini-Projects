@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+     #parent{
+        height: 800px;
+        width: 100%;
+        border: 1px solid;
+        background-image: url(./stars-1845140_1920.jpg);
+        margin-top: 50px;
+    }
+    #div1{
+        border: 1px solid green;
+        text-align: center;
+        height: 100px;
+        padding-top: 50px;
+    }
+    #inp1{
+        height: 30px;
+        width: 350px;
+        background-color: transparent;
+        color: white;
+    }
+    button{
+        height: 40px;
+        width: 100px;
+        border-radius: 30px;
+        background-image: linear-gradient(rgb(122, 210, 245), rgb(241, 136, 154));
+        margin-top: 20px;
+    }
+
+    #div2{
+        border: 2px solid green;
+        height: 550px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between
+        ;
+    }
+    .planet{
+        height: 200px;
+        width: 200px;
+        /* border: 1px solid green; */
+        margin-right: 190px;
+        text-align: center;
+        color: white;
+
+    }
+    img{
+        margin-top: -15px;
+    }
+    #h1{
+        color: white;
+        text-align: center;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        background-image: linear-gradient(pink, skyblue);
+        
+    }
+   </style>
+
+</head>
+<body>
+    <div id="parent">
+        <h1 id="h1"> Universal Weight Calculator</h1>
+        <div id="div1">
+            <input type="text" name="" id="inp1" placeholder="Enter your age"> <br>
+            <button onclick="getweight()">Submit</button>
+        </div>
+        <div id="div2">
+            
+            <div class="planet" id="planet1">
+                <h1>Moon</h1>
+                <img src="./full-moon-1869760_640.jpg" height="130px" width="150px" alt="">
+                <p id="moon"></p>
+            </div>
+            <div class="planet" id="planet2">
+                <h1>Jupiter</h1>
+                <img src="./jupiter-8130601_640.jpg" height="130px" width="150px" alt="">
+                <p id="jupiter"></p>
+            </div>
+            <div class="planet" id="planet3">
+                <h1>Neptune</h1>
+                <img src="./neptune-67537_640.jpg" height="130px" width="150px" alt="">
+                <p id="neptune"></p>
+            </div>
+            <div class="planet" id="planet4">
+                <h1>Mars</h1>
+                <img src="./mars-5564141_640.jpg" height="120px" width="170px" alt="">
+                <p id="mars"></p>
+            </div>
+            <div class="planet" id="planet5">
+                <h1>Saturn</h1>
+                <img src="./saturn-67671_640.jpg" height="130px" width="150px" alt="">
+                <p id="saturn"></p>
+            </div>
+            <div class="planet" id="planet6">
+                <h1>Pluto</h1>
+                <img src="./pluto-6595130_640.jpg" height="130px" width="150px" alt="">
+                <p id="pluto"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function getweight(){
+            let weight=parseInt(document.getElementById("inp1").value);
+            document.getElementById("moon").innerHTML="Weight: "+Math.round( weight/9.8*1.6)+" kg"
+          
+            document.getElementById("jupiter").innerHTML="Weight: "+Math.round( weight/9.8*24.79)+" kg"
+
+            document.getElementById("neptune").innerHTML="Weight: "+Math.round( weight/9.8*11.15)+" kg"
+
+            document.getElementById("mars").innerHTML = "Weight: " + Math.round(weight / 9.8 *3.71) + " kg";
+
+           document.getElementById("saturn").innerHTML = "Weight: " + Math.round(weight / 9.8 *10.44) + " kg";
+
+           document.getElementById("pluto").innerHTML = "Weight: " + Math.round(weight / 9.8 *0.62) + " kg";
+
+        }
+    </script>
+</body>
+</html>
